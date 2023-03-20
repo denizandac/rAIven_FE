@@ -1,21 +1,17 @@
 import logo from '../images/logo.jpeg';
-
+import { useNavigate } from 'react-router-dom';
 function Navbar() {
+
     return (
         <nav className="navbar">
-            <a href="/" className="navbar-logo">
-                <img src={logo} alt="Logo" />
-            </a>
             <ul className="navbar-nav">
                 <li className="nav-item">
                     <a href="/" className="nav-link">
                         Raiven
                     </a>
                 </li>
-                <li className="nav-item">
-                    <a href="/about" className="nav-link">
-                        Try It
-                    </a>
+                <li className="navbar-logo">
+                    <img src={logo} alt="Logo" />
                 </li>
                 <li className="nav-item">
                     <a href="/contact" className="nav-link">

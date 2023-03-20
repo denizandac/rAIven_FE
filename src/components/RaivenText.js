@@ -1,6 +1,6 @@
 function RaivenText() {
     return (
-        <div>
+        <div className="raiven_text">
             <h1>What is Raiven</h1>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
