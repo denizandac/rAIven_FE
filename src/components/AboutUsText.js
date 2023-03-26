@@ -1,6 +1,6 @@
 function AboutUsText() {
     return (
-        <div className="about-us-text">
+        <div className="about-us-text" id="AboutUsText">
             <h2>ABOUT US</h2>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.

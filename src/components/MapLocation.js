@@ -28,7 +28,10 @@ function MapLocation({ latitude, longitude }) {
 
         // Add a marker at the specified location with the custom icon
         const marker = L.marker([latitude, longitude], { icon }).addTo(map);
+        // L.marker([latitude + 2, longitude + 2], { icon }).addTo(map);
+        // You need to rite a code such that it centered the main marker but also shows the other markers by afjusting zoom level
         markerRef.current = marker;
+
 
         // Return a cleanup function that removes the marker and map
         return () => {

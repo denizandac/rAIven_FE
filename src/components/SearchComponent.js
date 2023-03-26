@@ -43,6 +43,36 @@ const SearchComponent = () => {
             console.log('Text: ', text);
             console.log('Audio URL: ', audioURL);
             alert('Form submitted successfully!');
+            if (text && !audioURL) {
+                fetch('http://your-backend-url.com/api/endpoint', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        text
+                    })
+                })
+                    .then(response => response.json())
+                    .then(data => console.log(data))
+                    .catch(error => console.error(error))
+            }
+            else if (!text && audioURL) {
+                const formData = new FormData();
+                formData.append('audio', audioBlob);
+                fetch('http://your-backend-url.com/api/endpoint', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: formData
+                })
+                    .then(response => response.json())
+                    .then(data => console.log(data))
+                    .catch(error => console.error(error))
+            }
+            deleteAudio();
+            setText('');
         } else {
             console.log('Please enter text or record audio');
             alert('Please enter text or record audio');
@@ -51,9 +81,12 @@ const SearchComponent = () => {
 
     return (
         <>
-            <div className="tutorial-text">
+            <div className="tutorial-text" id="UseTheRaiven">
                 <h1>How to use Raiven</h1>
-                <p>Click on the squares to reveal the color. If you click on a square that is not the same color as the one in the top left corner, you lose. If you click on all the squares that are the same color as the one in the top left corner, you win!</p>
+                <p>You can use the Raiven either typing or speaking. There is a panel for both us methods.
+                    Write your demands in the text box or click the record button, speak what you want and stop recording.
+                    After indicating your demands, click the submit button. After a brief time rAIven gives you the best recommendation based on your wants.
+                    The possible locations of the hotels also will be displayed in the map. </p>
             </div>
             <div className="search-bar">
                 <textarea

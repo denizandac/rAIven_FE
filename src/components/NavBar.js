@@ -6,7 +6,7 @@ function Navbar() {
         <nav className="navbar">
             <ul className="navbar-nav">
                 <li className="nav-item">
-                    <a href="/" className="nav-link">
+                    <a href="#RaivenText" className="nav-link">
                         Raiven
                     </a>
                 </li>
@@ -14,7 +14,7 @@ function Navbar() {
                     <img src={logo} alt="Logo" />
                 </li>
                 <li className="nav-item">
-                    <a href="/contact" className="nav-link">
+                    <a href="#AboutUsText" className="nav-link">
                         About Us
                     </a>
                 </li>

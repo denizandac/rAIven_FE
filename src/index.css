@@ -5,40 +5,47 @@ html {
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto Condensed', sans-serif;
-    background: linear-gradient(90deg, #009bff 0%,
+    background: linear-gradient(90deg, rgb(0, 155, 255) 0%,
             #00ffff 100%);
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 
 /*Navbar*/
 .navbar {
-    height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 35px;
 }
 
 .navbar-logo {
+    justify-content: center;
+    align-items: center;
     display: flex;
     scale: 1.5;
 
 }
 
 .navbar-logo img {
-    margin-top: 35px;
-    height: 80px;
-    width: 80px;
+    margin-top: 20%;
+    height: 30%;
+    width: 30%;
     border-style: solid;
     border-color: #ff7b00;
     border-radius: 50%;
+    transition: all 1s ease-in-out;
+}
+
+.navbar-logo img:hover {
+    scale: 1.5;
+    border-color: transparent;
+    border-radius: 10%;
 }
 
 .navbar-nav {
     display: flex;
     align-items: center;
-    list-style: none;
 }
 
 .nav-item {
@@ -46,7 +53,8 @@ html {
 }
 
 .nav-link {
-
+    position: relative;
+    z-index: 1;
     color: #ffa600;
     border-style: solid;
     border-color: #ff7b00;
@@ -65,7 +73,10 @@ html {
 
 /* For the Intro Button */
 .intro {
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .intro-text {
@@ -84,10 +95,8 @@ html {
 
 .intro-btn {
     text-decoration: none;
-    display: inline-block;
     padding: 10px 20px;
     background-color: #ff7b00;
-    margin-left: 45%;
     color: #fff;
     font-size: 1.4em;
     font-weight: 600;
@@ -115,8 +124,7 @@ html {
     border-radius: 0.3rem;
 }
 
-/* For the Parallax */
-/*
+/* For the Parallax
 .parallax {
     scale: 1.1;
     position: relative;
@@ -129,11 +137,8 @@ html {
 .parallax img {
     position: absolute;
     width: 100%;
-    top: -70px;
-    left: 0;
     pointer-events: none;
-}
-*/
+} */
 
 .raiven_text {
     width: 110%;
@@ -147,6 +152,7 @@ html {
 }
 
 .tutorial-text {
+    right: ;
     width: 30%;
     margin-left: 2%;
 }
@@ -285,6 +291,13 @@ audio {
 .Map {
     margin-left: 1%;
     border: 3px solid #ff7b00;
+    border-radius: 20px;
     height: 400px;
     width: 60%;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar-logo {
+        display: none;
+    }
 }
