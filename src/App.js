@@ -10,14 +10,14 @@ import AboutUsText from './components/AboutUsText';
 import MapLocation from './components/MapLocation';
 import SearchComponent from './components/SearchComponent';
 import Header from './components/Header';
+import Search_map from './components/Search_map';
 function App() {
   return (
     <div>
       <NavBar></NavBar>
       <Header></Header>
       <RaivenText></RaivenText>
-      <SearchComponent></SearchComponent>
-      <MapLocation {...{ latitude: 39.933365, longitude: 32.859741 }}></MapLocation>
+      <Search_map></Search_map>
       <AboutUsText></AboutUsText>
     </div >
     /*

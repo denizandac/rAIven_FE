@@ -5,6 +5,7 @@ const SearchComponent = () => {
     const [recording, setRecording] = useState(false);
     const [mediaRecorder, setMediaRecorder] = useState(null);
     const [audioURL, setAudioURL] = useState('');
+    let audioBlob = null;
 
     // start recording audio
     const startRecording = () => {
@@ -25,7 +26,7 @@ const SearchComponent = () => {
     const stopRecording = () => {
         mediaRecorder.stop();
         mediaRecorder.ondataavailable = (e) => {
-            const audioBlob = new Blob([e.data], { type: 'audio/mp3' });
+            audioBlob = new Blob([e.data], { type: 'audio/mp3' });
             const audioURL = URL.createObjectURL(audioBlob);
             setAudioURL(audioURL);
             setRecording(false);
